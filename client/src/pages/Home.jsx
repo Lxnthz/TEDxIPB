@@ -1,5 +1,6 @@
 import Headliner from '../assets/WebComponents/embracing-entropy.svg';
 import { useState } from 'react';
+import Footer from '../components/Footer';
 
 {/* Themes */}
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
@@ -10,6 +11,13 @@ import subthemeThree from '../assets/WebComponents/revamp-and-roll-theme.svg'
 import slideDotOne from '../assets/WebComponents/slide-dot-1.svg'
 import slideDotTwo from '../assets/WebComponents/slide-dot-2.svg'
 import slideDotThree from '../assets/WebComponents/slide-dot-3.svg'
+
+{/* Exported Components */}
+import ticketHeadline from '../assets/WebComponents/ticket-headline.svg'
+import intersection from '../assets/WebComponents/intersection.svg'
+import buyTickets from '../assets/WebComponents/buy-tickets.svg'
+import volunteerRegister from '../assets/WebComponents/volunteer-register.svg'
+import policeLine from '../assets/WebComponents/police-line.svg'
 
 export default function Home() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,22 +65,26 @@ export default function Home() {
 
     return (
         <>
-            <section className="bg-black pt-[85px] flex flex-col">
+            <section className="bg-black flex flex-col overflow-hidden">
                 {/* Hero */}
-                <div className="font-monts text-white">
-                    <h3 className="flex flex-col text-center tracking-widest font-[400]">
-                        <span>2024 TEDXIPB</span>
-                        <span>MAIN THEME</span>
-                    </h3>
-                </div>
+                <div className="bg-homeTopBG pt-[85px] pb-[50px] flex flex-col bg-center bg-no-repeat">
+                    <div className="font-monts text-white">
+                        <h3 className="flex flex-col text-center tracking-widest font-[400]">
+                            <span>2024 TEDXIPB</span>
+                            <span>MAIN THEME</span>
+                        </h3>
+                    </div>
 
-                <div className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
-                    <h3 className='text-white font-monts text-[15px] font-[700] italic'>u(r) turn</h3>
-                    <img src={Headliner} className='w-[290px]' alt="Headliner" />
+                    <div className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
+                        <h3 className='text-white font-monts text-[15px] font-[700] italic'>u(r) turn</h3>
+                        <img src={Headliner} className='w-[290px]' alt="Headliner" />
+                    </div>
                 </div>
-
+                <div className="flex justify-center mt-[-50px] z-10">
+                    <img src={policeLine} className="overflow-hidden min-w-[800px] w-[1000px]"></img>
+                </div>
                  {/* Carousel */}
-                <div className="relative w-full max-w-3xl mx-auto overflow-hidden">
+                <div className="relative w-full max-w-3xl mx-auto overflow-hidden bg-homeMidBG bg-center bg-no-repeat mt-[-20px]">
                     <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         {slides.map((slide, index) => (
                             <div key={slide.id} className="w-full flex-shrink-0">
@@ -107,7 +119,7 @@ export default function Home() {
                         In the spirit of discovering and spreading ideas, 
                         TED has created a program called TEDx. TEDx is a program of local, 
                         self-organized events that bring people together to share a TED-like experience. 
-                        Our event is called TEDx[name], where x = independently organized TED event. At our TEDx[name] event, 
+                        Our event is called TEDxIPB, where x = independently organized TED event. At our TEDx[name] event, 
                         TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. 
                         The TED Conference provides general guidance for the TEDx program, but individual TEDx events, 
                         including ours, are self-organized.
@@ -117,6 +129,46 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
+                </div>
+                
+                {/* Secure Tickets Section */}
+                <div className='bg-homeBotBG bg-top'>
+                    <div className="flex flex-col items-center mt-6  pt-10">
+                        <div>
+                            <img src={ticketHeadline} className="w-[260px]"></img>
+                        </div>
+                        <div className="flex justify-center items-end mt-7 max-h-[90px] gap-x-2"> 
+                            <div className="flex justify-center flex-col ">
+                                <img src={buyTickets} className="w-[132px]"></img>
+                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-between font-monts tracking-[.4em] text-[10px] font-[800] px-1">
+                                    <svg className="ml-1 w-3 h-3 scale-[-1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                    CLICK HERE
+                                </button>
+                            </div>
+                            <div className="flex justify-center flex-col">
+                                <img src={volunteerRegister} className="w-[132px]"></img>
+                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-between font-monts tracking-[.4em] text-[10px] font-[800] px-1">CLICK HERE
+                                    <svg className="ml-1 w-3 h-3 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="-mt-[100px] -mb-[110px]">
+                            <img src={intersection}></img>
+                        </div> 
+                        <div className='text-white font-monts text-xs text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px]'>
+                            <p>in a world full of intersection, which road are you choosing?</p>
+                            <button className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out'>TEDx Programs
+                                <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div> 
+                    </div>
+                    <Footer />
                 </div>
             </section>
         </>

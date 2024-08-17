@@ -10,7 +10,10 @@ export default {
         monts: ['"Montserrat"', 'sans-serif'],
       },
       backgroundImage: {
-        aboutTEDxBG: "url('/src/assets/PNGComponents/about-tedx-bg.png')"
+        aboutTEDxBG: "url('/src/assets/PNGComponents/about-tedx-bg.png')",
+        homeTopBG: "url('/src/assets/PNGComponents/homepage-bg-one.png')",
+        homeMidBG: "url('/src/assets/PNGComponents/homepage-bg-two.png')",
+        homeBotBG: "url('/src/assets/PNGComponents/homepage-bg-three.png')",
       },
     },
   },

@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-transparent text-white p-4 w-full fixed top-0 z-10">
+    <nav className="bg-transparent text-white p-4 w-screen fixed top-0 z-20">
       <div className="flex justify-between items-center">
         {/* Brand Name */}
         <div className="text-2xl font-bold">
