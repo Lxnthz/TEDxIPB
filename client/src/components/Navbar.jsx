@@ -1,20 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import LogoTED from '../assets/Icons/nav-logo.svg'
+import LogoTED from '../assets/Icons/ted-logo.svg';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [navBackground, setNavBackground] = useState('bg-transparent');
+  const [navDropdown, setNavDropdown] = useState('bg-black-300');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 50) { // Adjust this value as needed
+        setNavBackground('bg-black');
+      } else {
+        setNavBackground('bg-transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if(scrollTop == 0) {
+        setNavDropdown('bg-black bg-opacity-50'); 
+      } else {
+        setNavDropdown('bg-black');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-transparent text-white p-4 w-screen fixed top-0 z-20">
+    <nav className={`${navBackground} text-white p-4 w-screen fixed top-0 z-20 transition duration-300 ease-in-out`}>
       <div className="flex justify-between items-center">
         {/* Brand Name */}
         <div className="text-2xl font-bold">
-          <Link to="/"><img src={LogoTED} className='w-[120px]'></img></Link>
+          <Link to="/"><img src={LogoTED} className='w-[120px]' alt="TEDx Logo" /></Link>
         </div>
 
         {/* Hamburger Menu Icon for Mobile */}
@@ -27,7 +57,7 @@ function Navbar() {
         </div>
 
         {/* Menu Items */}
-        <div className={`absolute top-16 left-0 w-full bg-black md:static md:flex md:items-center md:justify-between ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`absolute top-[3.9rem] left-0 w-full ${navDropdown} transition duration-300 ease-in-out md:static md:flex md:items-center md:justify-between ${isOpen ? 'block' : 'hidden'}`}>
           <ul className="flex flex-col md:flex-row md:space-x-6 text-md md:text-sm text-center md:mx-auto font-monts font-[600] text-[12px]">
             <li className="py-2 md:py-0">
               <Link to="/" className="block md:inline-block hover:text-gray-300">Home</Link>
@@ -42,7 +72,7 @@ function Navbar() {
               <Link to="/merchandise" className="block md:inline-block hover:text-gray-300">Merchandise</Link>
             </li>
             <li className="py-2 md:py-0">
-              <Link to="/buy-tickets" className="block md:inline-block hover:text-gray-300">Buy Tickets</Link>
+              <Link to="/tickets" className="block md:inline-block hover:text-gray-300">Buy Tickets</Link>
             </li>
             <li className="py-2 md:py-0">
               <Link to="/login" className="block md:inline-block hover:text-gray-300">Login</Link>

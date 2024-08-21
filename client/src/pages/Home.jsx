@@ -1,4 +1,3 @@
-import Headliner from '../assets/WebComponents/embracing-entropy.svg';
 import { useState } from 'react';
 import Footer from '../components/Footer';
 
@@ -6,6 +5,7 @@ import Footer from '../components/Footer';
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
 import subthemeTwo from '../assets/WebComponents/traffic-triage-theme.svg'
 import subthemeThree from '../assets/WebComponents/revamp-and-roll-theme.svg'
+import Headliner from '../assets/WebComponents/embracing-entropy.svg';
 
 {/* Slider Dot */}
 import slideDotOne from '../assets/WebComponents/slide-dot-1.svg'
@@ -29,7 +29,7 @@ export default function Home() {
                 <div className='flex flex-col items-center justify-around'>
                     <img src={slideDotOne} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>1ST SUBTHEME</h4>
-                    <img src={subthemeOne} className='w-[210px] mt-2'></img>
+                    <img src={subthemeOne} className='w-full '></img>
                 </div>
             )
         },
@@ -39,7 +39,7 @@ export default function Home() {
                 <div className='flex flex-col items-center justify-around'>
                     <img src={slideDotTwo} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>2ND SUBTHEME</h4>
-                    <img src={subthemeTwo} className='w-[230px] mt-5'></img>
+                    <img src={subthemeTwo} className='w-full mt-5'></img>
                 </div>
             )
         },
@@ -49,7 +49,7 @@ export default function Home() {
                 <div className='flex flex-col items-center justify-around'>
                     <img src={slideDotThree} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>3RD SUBTHEME</h4>
-                    <img src={subthemeThree} className='w-[250px] mt-[-20px]'></img>
+                    <img src={subthemeThree} className='w-full mt-[-20px]'></img>
                 </div>
             )
         },
@@ -67,7 +67,7 @@ export default function Home() {
         <>
             <section className="bg-black flex flex-col overflow-hidden">
                 {/* Hero */}
-                <div className="bg-homeTopBG pt-[85px] pb-[50px] flex flex-col bg-center bg-no-repeat">
+                <div className="bg-homeTopBG pt-[85px] pb-[50px] flex flex-col bg-center bg-no-repeat bg-cover">
                     <div className="font-monts text-white">
                         <h3 className="flex flex-col text-center tracking-widest font-[400]">
                             <span>2024 TEDXIPB</span>
@@ -84,11 +84,11 @@ export default function Home() {
                     <img src={policeLine} className="overflow-hidden min-w-[800px] w-[1000px]"></img>
                 </div>
                  {/* Carousel */}
-                <div className="relative w-full max-w-3xl mx-auto overflow-hidden bg-homeMidBG bg-center bg-no-repeat mt-[-20px]">
+                <div className="relative w-full max-w-3xl mx-auto overflow-hidden bg-homeMidBG bg-center bg-no-repeat mt-[-20px] bg-cover">
                     <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         {slides.map((slide, index) => (
                             <div key={slide.id} className="w-full flex-shrink-0">
-                                <div className="p-5 text-white">
+                                <div className="py-5 px-10 text-white">
                                     {slide.content}
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
 
                 {/* About TEDx Container */}
-                <div className='bg-aboutTEDxBG bg-center bg-cover bg-no-repeat max-w-[360px] p-6 m-1 flex flex-col gap-4 items-start'>
+                <div className='bg-aboutTEDxBG bg-center bg-cover bg-no-repeat e-full p-6 m-1 flex flex-col gap-4 items-start'>
                     <h1 className='text-md font-[800] leading-tight'>
                         <div className='text-white'>
                             <span className='text-[#DB1212]'>T</span>ECHNOLOGY
@@ -132,32 +132,25 @@ export default function Home() {
                 </div>
                 
                 {/* Secure Tickets Section */}
-                <div className='bg-homeBotBG bg-top'>
-                    <div className="flex flex-col items-center mt-6  pt-10">
-                        <div>
-                            <img src={ticketHeadline} className="w-[260px]"></img>
+                <div className='bg-homeBotBG bg-top bg-no-repeat bg-cover'>
+                    <div className="flex flex-col items-center mt-6 pt-10 w-screen">
+                        <div className='w-screen px-7'>
+                            <img src={ticketHeadline} className="w-full"></img>
                         </div>
-                        <div className="flex justify-center items-end mt-7 max-h-[90px] gap-x-2"> 
-                            <div className="flex justify-center flex-col ">
-                                <img src={buyTickets} className="w-[132px]"></img>
-                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-between font-monts tracking-[.4em] text-[10px] font-[800] px-1">
-                                    <svg className="ml-1 w-3 h-3 scale-[-1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                    CLICK HERE
-                                </button>
+
+                        <div className="flex justify-center items-end mt-7 w-screen px-7 max-h-[100px] gap-x-2"> 
+                            <div className="flex justify-center flex-col w-full">
+                                <img src={buyTickets} className="w-full"></img>
+                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1">CLICK HERE</button>
                             </div>
-                            <div className="flex justify-center flex-col">
-                                <img src={volunteerRegister} className="w-[132px]"></img>
-                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-between font-monts tracking-[.4em] text-[10px] font-[800] px-1">CLICK HERE
-                                    <svg className="ml-1 w-3 h-3 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </button>
+                            <div className="flex justify-center flex-col w-full">
+                                <img src={volunteerRegister} className="w-full"></img>
+                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center">CLICK HERE</button>
                             </div>
                         </div>
+
                         <div className="-mt-[100px] -mb-[110px]">
-                            <img src={intersection}></img>
+                            <img src={intersection} className='w-screen'></img>
                         </div> 
                         <div className='text-white font-monts text-xs text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px]'>
                             <p>in a world full of intersection, which road are you choosing?</p>

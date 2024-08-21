@@ -1,22 +1,28 @@
-import LogoTED from '../assets/Icons/ted-logo.svg'
-import LinkedIn from '../assets/Icons/linkedin.svg'
-import Twitter from '../assets/Icons/twitter.svg'
-import Tiktok from '../assets/Icons/tiktok.svg'
-import Instagram from '../assets/Icons/instagram.svg'
+import LogoTED from '../assets/Icons/ted-logo.svg';
+import LinkedIn from '../assets/Icons/linkedin.svg';
+import Twitter from '../assets/Icons/twitter.svg';
+import Tiktok from '../assets/Icons/tiktok.svg';
+import Instagram from '../assets/Icons/instagram.svg';
 
 export default function Footer() {
   return (
-    <footer className='mx-5 my-4 flex justify-between'>
+    <footer className='mx-5 my-4 flex justify-between items-center'>
       <div>
-        <img src={LogoTED} className='w-[140px]'></img>
+        <img src={LogoTED} className='w-[140px]' alt="TEDx Logo" />
       </div>
-      <div>
-        <div className='grid grid-cols-2'>
-          <img src={LinkedIn} className='w-[15px]'></img>
-          <img src={Instagram} className='w-[15px]'></img>
-          <img src={Tiktok} className='w-[15px]'></img>
-          <img src={Twitter} className='w-[15px]'></img>
-        </div>
+      <div className='flex space-x-4'>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <img src={LinkedIn} className='w-[15px]' alt="LinkedIn" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src={Instagram} className='w-[15px]' alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+          <img src={Tiktok} className='w-[15px]' alt="Tiktok" />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <img src={Twitter} className='w-[15px]' alt="Twitter" />
+        </a>
       </div>
     </footer>
   );
