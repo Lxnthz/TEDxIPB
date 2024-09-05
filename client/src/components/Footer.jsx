@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className='mx-5 my-4 flex justify-between items-center'>
       <div>
-        <img src={LogoTED} className='w-[140px]' alt="TEDx Logo" />
+        <img src={LogoTED} className='w-[130px]' alt="TEDx Logo" />
       </div>
       <div className='flex space-x-4'>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">

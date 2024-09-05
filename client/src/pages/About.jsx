@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 {/* Components */}
 import Header from '../assets/WebComponents/about-header.svg'
@@ -23,6 +24,13 @@ import BreneBrown from '../assets/PNGComponents/brene-brown.png'
 import SimonSinek from '../assets/PNGComponents/simon-sinek.png'
 
 export default function About() {
+    {/* Page Navigator */}
+    const navigate = useNavigate();
+    const handleSubthemeOne = () => { navigate('/subtheme-one'); };
+    const handleSubthemeTwo = () => { navigate('/subtheme-two'); };
+    const handleSubthemeThree = () => { navigate('/subtheme-three'); };
+    const handleMainTheme = () => { navigate('/main-theme'); };
+    {/* --------------------------- */}
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentTheme, setCurrentTheme] = useState(0);
     
@@ -80,7 +88,7 @@ export default function About() {
         { 
             id: 1, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeOne} className='flex flex-col items-center justify-around'>
                     <img src={slideDotOne} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>1ST SUBTHEME</h4>
                     <img src={subthemeOne} className='w-full '></img>
@@ -90,7 +98,7 @@ export default function About() {
         { 
             id: 2, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeTwo} className='flex flex-col items-center justify-around'>
                     <img src={slideDotTwo} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>2ND SUBTHEME</h4>
                     <img src={subthemeTwo} className='w-full mt-5'></img>
@@ -100,7 +108,7 @@ export default function About() {
         { 
             id: 3, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeThree} className='flex flex-col items-center justify-around'>
                     <img src={slideDotThree} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>3RD SUBTHEME</h4>
                     <img src={subthemeThree} className='w-full mt-[-20px]'></img>
@@ -118,7 +126,7 @@ export default function About() {
     };
 
     return (
-        <section className='bg-greenOutlineBG bg-cover bg-no-repeat bg-center min-h-screen w-screen overflow-hidden'>
+        <section className='bg-greenOutlineBG bg-full bg-no-repeat bg-center min-h-screen w-screen overflow-hidden'>
             {/* Section One */}
             <div className='flex flex-col  items-center pt-[70px]'>
                 <div className='bg-speakersNameBG bg-top bg-contain w-full p-5 pt-9 bg-no-repeat flex flex-col justify-center items-center gap-y-6'>
@@ -211,7 +219,7 @@ export default function About() {
             <div className='flex flex-col w-full items-center justify-center text-white'>
                 <img src={KoinTED} className='w-full px-5'></img>
                 <img src={PoliceLine} className='min-w-[2000px] -mt-10 -mb-[50px] z-10'></img>
-                <div className='flex flex-col items-center justify-center py-[50px] w-full p-5 bg-redThemeBG bg-center bg-no-repeat bg-cover'>
+                <div onClick={handleMainTheme} className='flex flex-col items-center justify-center py-[50px] w-full p-5 bg-redThemeBG bg-center bg-no-repeat bg-cover'>
                     <h2 className='font-monts tracking-widest font-[200]'>2024 TEDXIPB MAIN THEME</h2>
                     <div className='flex flex-col items-center pt-8 gap-y-3'>
                         <h2 className='font-[500] italic'>u(r) turn,</h2>

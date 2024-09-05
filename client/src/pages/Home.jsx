@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 {/* Themes */}
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
@@ -13,6 +13,9 @@ import slideDotTwo from '../assets/WebComponents/slide-dot-2.svg'
 import slideDotThree from '../assets/WebComponents/slide-dot-3.svg'
 
 {/* Exported Components */}
+import Footer from '../components/Footer';
+
+{/* Exported Assets */}
 import ticketHeadline from '../assets/WebComponents/ticket-headline.svg'
 import intersection from '../assets/WebComponents/intersection.svg'
 import buyTickets from '../assets/WebComponents/buy-tickets.svg'
@@ -20,13 +23,22 @@ import volunteerRegister from '../assets/WebComponents/volunteer-register.svg'
 import policeLine from '../assets/WebComponents/police-line.svg'
 
 export default function Home() {
+    {/* Page Navigator */}
+    const navigate = useNavigate();
+    const handleAboutClick = () => { navigate('/about'); };
+    const handleSubthemeOne = () => { navigate('/subtheme-one'); };
+    const handleSubthemeTwo = () => { navigate('/subtheme-two'); };
+    const handleSubthemeThree = () => { navigate('/subtheme-three'); };
+    const handleMainTheme = () => { navigate('/main-theme'); };
+    {/* --------------------------- */}
+    
+    {/* Carousel Controller */}
     const [currentSlide, setCurrentSlide] = useState(0);
-
     const slides = [
         { 
             id: 1, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeOne} className='flex flex-col items-center justify-around'>
                     <img src={slideDotOne} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>1ST SUBTHEME</h4>
                     <img src={subthemeOne} className='w-full '></img>
@@ -36,7 +48,7 @@ export default function Home() {
         { 
             id: 2, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeTwo} className='flex flex-col items-center justify-around'>
                     <img src={slideDotTwo} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>2ND SUBTHEME</h4>
                     <img src={subthemeTwo} className='w-full mt-5'></img>
@@ -46,7 +58,7 @@ export default function Home() {
         { 
             id: 3, 
             content: (
-                <div className='flex flex-col items-center justify-around'>
+                <div onClick={handleSubthemeThree} className='flex flex-col items-center justify-around'>
                     <img src={slideDotThree} className='w-[24px] mb-1'></img>
                     <h4 className='font-monts font-[400] text-[8px] tracking-widest'>3RD SUBTHEME</h4>
                     <img src={subthemeThree} className='w-full mt-[-20px]'></img>
@@ -54,14 +66,9 @@ export default function Home() {
             )
         },
     ];
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    };
+    const nextSlide = () => { setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1)); };
+    const prevSlide = () => { setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1)); };
+    {/* --------------------------- */}
 
     return (
         <>
@@ -75,7 +82,7 @@ export default function Home() {
                         </h3>
                     </div>
 
-                    <div className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
+                    <div onClick={handleMainTheme} className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
                         <h3 className='text-white font-monts text-[15px] font-[700] italic'>u(r) turn</h3>
                         <img src={Headliner} className='w-[290px]' alt="Headliner" />
                     </div>
@@ -154,9 +161,21 @@ export default function Home() {
                         </div> 
                         <div className='text-white font-monts text-xs text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px]'>
                             <p>in a world full of intersection, which road are you choosing?</p>
-                            <button className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out'>TEDx Programs
-                                <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                            <button 
+                                onClick={handleAboutClick} 
+                                className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] tracking-wider transition duration-200 ease-in-out'>Learn more...
+                                <svg 
+                                    className="ml-1 w-3 h-3" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round" 
+                                        strokeWidth="2" 
+                                        d="M9 5l7 7-7 7">
+                                    </path>
                                 </svg>
                             </button>
                         </div> 

@@ -14,10 +14,10 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 50) { // Adjust this value as needed
-        setNavBackground('bg-black');
+      if (scrollTop == 0) { // Adjust this value as needed
+        setNavBackground('bg-black bg-opacity-50');
       } else {
-        setNavBackground('bg-transparent');
+        setNavBackground('bg-black');
       }
     };
 
