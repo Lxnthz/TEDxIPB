@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 // import pages
 import Home from './pages/Home';
 import About from './pages/About';
-import NotFound from './pages/NotFound';
 import Events from './pages/Events';
 import MainTheme from './pages/Themes/MainTheme';
 import SubOne from './pages/Themes/SubthemeOne';
@@ -25,7 +24,7 @@ function App() {
           <Route path="/subtheme-two" element={<SubTwo />} />
           <Route path="/subtheme-three" element={<SubThree />} />
         <Route path="/events" element={<Events />} />             
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Home />} />
       </Routes>
       
     </>
