@@ -15,6 +15,7 @@ export default {
       },
       backgroundImage: {
         aboutTEDxBG: "url('/src/assets/PNGComponents/about-tedx-bg.png')",
+        aboutTEDxBGdesktop: "url('/src/assets/PNGComponents/about-tedx-bg-desktop.png')",
         redThemeBG: "url('/src/assets/PNGComponents/redBGnoFilter.png')",
         homeTopBG: "url('/src/assets/PNGComponents/homepage-bg-one.png')",
         homeMidBG: "url('/src/assets/PNGComponents/homepage-bg-two.png')",

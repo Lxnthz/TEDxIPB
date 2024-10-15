@@ -5,16 +5,17 @@ import LogoTED from '../assets/Icons/ted-logo.svg';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [navBackground, setNavBackground] = useState('bg-transparent');
-  const [navDropdown, setNavDropdown] = useState('bg-black-300');
 
+  // Toggles mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Handles scroll event to change navbar background color
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop == 0) { // Adjust this value as needed
+      if (scrollTop === 0) {
         setNavBackground('bg-black bg-opacity-50');
       } else {
         setNavBackground('bg-black');
@@ -25,60 +26,52 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if(scrollTop == 0) {
-        setNavDropdown('bg-black bg-opacity-50'); 
-      } else {
-        setNavDropdown('bg-black');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <nav className={`${navBackground} text-white p-4 w-screen fixed top-0 z-20 transition duration-300 ease-in-out`}>
-      <div className="flex justify-between items-center">
-        {/* Brand Name */}
+      <div className="flex justify-between items-center md:ml-10">
+        {/* Brand Logo */}
         <div className="text-2xl font-bold">
-          <Link to="/"><img src={LogoTED} className='w-[120px]' alt="TEDx Logo" /></Link>
+          <Link to="/">
+            <img src={LogoTED} className="w-[120px]" alt="TEDx Logo" />
+          </Link>
         </div>
 
         {/* Hamburger Menu Icon for Mobile */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
         </div>
 
         {/* Menu Items */}
-        <div className={`absolute top-[3.9rem] left-0 w-full ${navDropdown} transition duration-300 ease-in-out md:static md:flex md:items-center md:justify-between ${isOpen ? 'block' : 'hidden'}`}>
-          <ul className="flex flex-col md:flex-row md:space-x-6 text-md md:text-sm text-center md:mx-auto font-monts font-[600] text-[12px]">
+        <div
+          className={`absolute top-[3.9rem] left-0 w-full bg-black md:bg-transparent md:static md:flex md:items-center md:justify-end md:px-10 ${
+            isOpen ? 'block' : 'hidden'
+          }`}
+        >
+          <ul className="flex flex-col md:flex-row md:space-x-6 text-md md:text-sm text-center font-monts font-[600] text-[12px]">
             <li className="py-2 md:py-0">
-              <Link to="/" className="block md:inline-block hover:text-gray-300">Home</Link>
+              <Link to="/" className="block md:inline-block hover:text-gray-300">
+                Home
+              </Link>
             </li>
             <li className="py-2 md:py-0">
-              <Link to="/about" className="block md:inline-block hover:text-gray-300">About</Link>
+              <Link to="/about" className="block md:inline-block hover:text-gray-300">
+                About
+              </Link>
             </li>
             <li className="py-2 md:py-0">
-              <Link to="/events" className="block md:inline-block hover:text-gray-300">Past Events</Link>
-            </li>
-            <li className="py-2 md:py-0">
-              <Link to="/merchandise" className="block md:inline-block hover:text-gray-300">Merchandise</Link>
-            </li>
-            <li className="py-2 md:py-0">
-              <Link to="/tickets" className="block md:inline-block hover:text-gray-300">Buy Tickets</Link>
-            </li>
-            <li className="py-2 md:py-0">
-              <Link to="/login" className="block md:inline-block hover:text-gray-300">Login</Link>
-            </li>
-            <li className="py-2 md:py-0">
-              <Link to="/signup" className="block md:inline-block hover:text-gray-300">Signup</Link>
+              <Link to="/events" className="block md:inline-block hover:text-gray-300">
+                Past Events
+              </Link>
             </li>
           </ul>
         </div>

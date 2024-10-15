@@ -8,10 +8,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Events from './pages/Events';
-import Merchandise from './pages/Merchandise';
-import Tickets from './pages/Tickets';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 import MainTheme from './pages/Themes/MainTheme';
 import SubOne from './pages/Themes/SubthemeOne';
 import SubTwo from './pages/Themes/SubthemeTwo';
@@ -28,11 +24,7 @@ function App() {
           <Route path="/subtheme-one" element={<SubOne />} />
           <Route path="/subtheme-two" element={<SubTwo />} />
           <Route path="/subtheme-three" element={<SubThree />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/merchandise" element={<Merchandise />} />
-        <Route path="/tickets" element={<Tickets />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/events" element={<Events />} />             
         <Route path="*" element={<NotFound />} />
       </Routes>
       
