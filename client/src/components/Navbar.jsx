@@ -28,11 +28,11 @@ function Navbar() {
 
   return (
     <nav className={`${navBackground} text-white p-4 w-screen fixed top-0 z-20 transition duration-300 ease-in-out`}>
-      <div className="flex justify-between items-center md:ml-10">
+      <div className="flex justify-between items-center md:px-12">
         {/* Brand Logo */}
         <div className="text-2xl font-bold">
           <Link to="/">
-            <img src={LogoTED} className="w-[120px]" alt="TEDx Logo" />
+            <img src={LogoTED} className="w-[120px] md:w-[200px]" alt="TEDx Logo" />
           </Link>
         </div>
 
@@ -53,7 +53,7 @@ function Navbar() {
 
         {/* Menu Items */}
         <div
-          className={`absolute top-[3.9rem] left-0 w-full bg-black md:bg-transparent md:static md:flex md:items-center md:justify-end md:px-10 ${
+          className={`absolute top-[3.9rem] left-0 w-full bg-black md:bg-transparent md:static md:flex md:items-center md:justify-end ${
             isOpen ? 'block' : 'hidden'
           }`}
         >

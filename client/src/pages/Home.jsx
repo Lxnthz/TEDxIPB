@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 {/* Themes */}
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
@@ -14,6 +15,7 @@ import slideDotThree from '../assets/WebComponents/slide-dot-3.svg'
 
 {/* Exported Components */}
 import Footer from '../components/Footer';
+import MovingLogo from '../components/MainThemeLogo';
 
 {/* Exported Assets */}
 import ticketHeadline from '../assets/WebComponents/ticket-headline.svg'
@@ -21,7 +23,6 @@ import intersection from '../assets/WebComponents/intersection.svg'
 import intersectionDesktop from '../assets/WebComponents/intersection-fade-desktop.svg'
 import buyTickets from '../assets/WebComponents/buy-tickets.svg'
 import volunteerRegister from '../assets/WebComponents/volunteer-register.svg'
-import policeLine from '../assets/WebComponents/police-line.svg'
 import policeLineLong from '../assets/WebComponents/police-line-long.svg'
 
 export default function Home() {
@@ -76,17 +77,40 @@ export default function Home() {
         <>
             <section className="bg-black flex flex-col overflow-hidden">
                 {/* Hero */}
-                <div className="bg-homeTopBG pt-[85px] pb-[50px] flex flex-col bg-center bg-no-repeat bg-cover xl:mb-[-15px]">
-                    <div className="font-monts text-white">
+                <div className="bg-homeTopBG pt-[85px] pb-[50px] flex flex-col bg-center bg-no-repeat bg-cover xl:mb-[-15px] md:h-[100vh] justify-center">
+                    <motion.div 
+                      className="font-monts text-white"
+                      initial={{ opacity:0 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1, ease: "easeOut" }}>
                         <h3 className="flex flex-col text-center tracking-widest font-[400] md:text-2xl">
-                            <span>2024 TEDXIPB</span>
-                            <span>MAIN THEME</span>
+                            <motion.span
+                              initial={{ x:250 }}
+                              whileInView={{ x: 0 }}
+                              transition={{ duration: 0.8, ease: "easeInOut" }}
+                            >2024 TEDXIPB</motion.span>
+                            <motion.span
+                              initial={{ x:-250 }}
+                              whileInView={{ x: 0 }}
+                              transition={{ duration: 0.8, ease: "easeInOut" }}
+                            >MAIN THEME</motion.span>
                         </h3>
-                    </div>
+                    </motion.div>
 
                     <div onClick={handleMainTheme} className='flex flex-col justify-center items-center mt-3 gap-4 p-5 md:mt-0 md:pb-12'>
-                        <h3 className='text-white font-monts text-[15px] font-[700] italic md:text-[21px]'>u(r) turn</h3>
-                        <img src={Headliner} className='w-[290px] md:w-[500px] xl:w-[800px]' alt="Headliner" />
+                        <motion.h3 
+                          className='text-white font-monts text-[15px] font-[700] italic md:text-[21px]'
+                          initial={{ opacity:0, y:50 }}
+                          whileInView={{ opacity:1, y:0 }}
+                          transition={{ duration:1, ease:"easeInOut" }}>u(r) turn</motion.h3>
+                        <motion.img 
+                          src={Headliner} 
+                          className='w-[290px] md:w-[500px] xl:w-[800px] hidden' 
+                          alt="Headliner"
+                          initial={{ y:100, opacity:0 }}
+                          whileInView={{ y:0, opacity:1 }}
+                          transition={{ duration: 0.8, ease: "easeInOut" }} />
+                        <MovingLogo />
                     </div>
                 </div>
                 <div className="flex justify-center mt-[-50px] z-10">
@@ -103,16 +127,16 @@ export default function Home() {
                             </div>
                         ))}
                     </div>
-                    <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full">
+                    <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full mx-4 md:mx-12">
                         &#10094;
                     </button>
-                    <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full">
+                    <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full mx-4 md:mx-12">
                         &#10095;
                     </button>
                 </div>
 
                 {/* About TEDx Container */}
-                <div className='bg-aboutTEDxBG bg-center bg-cover bg-no-repeat p-6 m-1 flex flex-col gap-4 items-start lg:bg-aboutTEDxBGdesktop lg:bg-right lg:px-[100px]'>
+                <div className='bg-aboutTEDxBG bg-center bg-cover bg-no-repeat p-6 m-1 flex flex-col gap-4 items-start lg:bg-aboutTEDxBGdesktop lg:bg-right lg:px-[100px] md:px-12'>
                     <h1 className='text-md font-[800] leading-tight md:text-5xl'>
                         <div className='text-white'>
                             <span className='text-[#DB1212]'>T</span>ECHNOLOGY
@@ -141,13 +165,13 @@ export default function Home() {
                 </div>
                 
                 {/* Secure Tickets Section */}
-                <div className='bg-homeBotBG bg-no-repeat bg-cover bg-center'>
+                <div className='bg-homeBotBG bg-no-repeat bg-full bg-center'>
                     <div className="flex flex-col items-center mt-6 pt-10 w-screen">
                         <div className='w-screen px-7 md:px-[60px] flex justify-center'>
                             <img src={ticketHeadline} className="w-full lg:max-w-[700px]"></img>
                         </div>
 
-                        <div className="flex justify-center items-end mt-7 w-screen px-7 max-h-[100px] gap-x-2 md:mt-[150px] z-10"> 
+                        <div className="flex justify-center items-end mt-7 w-screen px-7 max-h-[100px] gap-x-2 md:mt-[150px] z-10 md:px-12"> 
                             <div className="flex justify-center flex-col w-full lg:w-[350px]">
                                 <img src={buyTickets} className="w-full"></img>
                                 <button className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4">CLICK HERE</button>
@@ -162,8 +186,8 @@ export default function Home() {
                             <img src={intersection} className='w-screen md:hidden'></img>
                             <img src={intersectionDesktop} className='hidden w-screen md:block'></img>
                         </div> 
-                        <div className='text-white font-monts text-xs text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px] md:text-lg'>
-                            <p>in a world full of intersection, which road are you choosing?</p>
+                        <div className='text-white font-monts text-md text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px] md:text-xl mx-7'>
+                            <p>in a world full of <span className='italic'>intersection</span>, which <span className='italic'>road</span> are you choosing?</p>
                             <button 
                                 onClick={handleAboutClick} 
                                 className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] tracking-wider transition duration-200 ease-in-out md:text-[12px]'>Learn more...
