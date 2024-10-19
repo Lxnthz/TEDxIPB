@@ -6,22 +6,27 @@ import Instagram from '../assets/Icons/instagram.svg';
 
 export default function Footer() {
   return (
-    <footer className='mx-5 my-4 flex justify-between items-center'>
-      <div>
-        <img src={LogoTED} className='w-[130px]' alt="TEDx Logo" />
+    <footer className='my-4 flex justify-between items-center md:mx-5 lg:mx-9 xl:mx-12'> 
+      <div className='flex flex-col gap-y-1'>
+        <img src={LogoTED} className='w-[130px] md:w-[200px]' alt="TEDx Logo" />
+        <p className='hidden md:flex flex-col text-white font-monts text-xs'>
+          <span>©️2024 All rights reserved</span>
+          <span>This independent TEDx event is operated under the</span>
+          <span>license of TED</span> 
+        </p>
       </div>
       <div className='flex space-x-4'>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <img src={LinkedIn} className='w-[15px]' alt="LinkedIn" />
+          <img src={LinkedIn} className='w-[15px] md:w-[20px]' alt="LinkedIn" />
         </a>
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src={Instagram} className='w-[15px]' alt="Instagram" />
+          <img src={Instagram} className='w-[15px] md:w-[20px]' alt="Instagram" />
         </a>
         <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-          <img src={Tiktok} className='w-[15px]' alt="Tiktok" />
+          <img src={Tiktok} className='w-[15px] md:w-[20px]' alt="Tiktok" />
         </a>
         <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-          <img src={Twitter} className='w-[15px]' alt="Twitter" />
+          <img src={Twitter} className='w-[15px] md:w-[20px]' alt="Twitter" />
         </a>
       </div>
     </footer>

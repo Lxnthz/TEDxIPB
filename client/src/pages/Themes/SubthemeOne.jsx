@@ -24,8 +24,8 @@ export default function SubthemeOne() {
         Power up into the parallels between understanding your vehicle&apos;s engine and mastering the engine of life itself. Learn how to ignite your passions, fuel your ambitions, and harness your inner power to propel yourself towards success. Discover the key principles that drive both engines and lives, and unlock the secrets to maximising your potential on the journey of life
         </p>
       </div>
-      <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between items-end'>
-        <div className=''>
+      <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between'>
+        <div className='flex w-screen items-end'>
           <button 
             onClick={handleSubthemeTwo}
             className='align-middle text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] tracking-wider transition duration-200 ease-in-out'>Subtheme 2

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 
 {/* Themes */}
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
@@ -41,31 +41,61 @@ export default function Home() {
         { 
             id: 1, 
             content: (
-                <div onClick={handleSubthemeOne} className='flex flex-col items-center justify-around'>
+                <motion.div
+                  onClick={handleSubthemeOne} 
+                  className='flex flex-col items-center justify-around'
+                  initial={{ opacity:0 }}
+                  whileInView={{ opacity:1 }}
+                  transition={{ duration:.5, ease:"easeInOut" }}>
                     <img src={slideDotOne} className='w-[24px] mb-1 md:w-[50px]'></img>
-                    <h4 className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'>1ST SUBTHEME</h4>
+                    <motion.h4 
+                      className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'
+                      initial={{ y:10 }}
+                      whileInView={{ y:0 }}
+                      transition={{ duration:.5, ease:"easeInOut"}}>
+                    1ST SUBTHEME</motion.h4>
                     <img src={subthemeOne} className='w-full md:w-[400px] xl:w-[750px]'></img>
-                </div>
+                </motion.div>
             )
         },
         { 
             id: 2, 
             content: (
-                <div onClick={handleSubthemeTwo} className='flex flex-col items-center justify-around'>
+                <motion.div 
+                  onClick={handleSubthemeTwo} 
+                  className='flex flex-col items-center justify-around'
+                  initial={{ opacity:0 }}
+                  whileInView={{ opacity:1 }}
+                  transition={{ duration:.5, ease:"easeInOut" }}>
                     <img src={slideDotTwo} className='w-[24px] mb-1 md:w-[50px]'></img>
-                    <h4 className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'>2ND SUBTHEME</h4>
+                    <motion.h4 
+                      className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'
+                      initial={{ y:10 }}
+                      whileInView={{ y:0 }}
+                      transition={{ duration:.5, ease:"easeInOut"}}>
+                    2ND SUBTHEME</motion.h4>
                     <img src={subthemeTwo} className='w-full mt-5 md:w-[500px] xl:w-[800px]'></img>
-                </div>
+                </motion.div>
             )
         },
         { 
             id: 3, 
             content: (
-                <div onClick={handleSubthemeThree} className='flex flex-col items-center justify-around'>
+                <motion.div 
+                  onClick={handleSubthemeThree} 
+                  className='flex flex-col items-center justify-around'
+                  initial={{ opacity:0 }}
+                  whileInView={{ opacity:1 }}
+                  transition={{ duration:.5, ease:"easeInOut" }}>
                     <img src={slideDotThree} className='w-[24px] mb-1 md:w-[50px]'></img>
-                    <h4 className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'>3RD SUBTHEME</h4>
+                    <motion.h4 
+                      className='font-monts font-[400] text-[8px] tracking-widest md:text-[18px]'
+                      initial={{ y:10 }}
+                      whileInView={{ y:0 }}
+                      transition={{ duration:.5, ease:"easeInOut"}}
+                    >3RD SUBTHEME</motion.h4>
                     <img src={subthemeThree} className='w-full mt-[-20px] md:w-[500px] md:mt-[-50px] xl:w-[800px]'></img>
-                </div>
+                </motion.div>
             )
         },
     ];
@@ -114,10 +144,16 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex justify-center mt-[-50px] z-10">
-                    <img src={policeLineLong} className="overflow-hidden min-w-[800px] w-[1000px] md:min-w-[2000px] md:-mb-5 xl:min-w-[160vw]"></img>
+                    <motion.img 
+                      src={policeLineLong} 
+                      className="overflow-hidden min-w-[800px] w-[1000px] md:min-w-[2000px] md:-mb-5 xl:min-w-[160vw]"
+                      initial={{ opacity:0 }}
+                      whileInView={{ opacity:1 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                    ></motion.img>
                 </div>
                  {/* Carousel */}
-                <div className="relative w-full max-w-full mx-auto overflow-hidden bg-homeMidBG bg-center bg-no-repeat mt-[-20px] bg-full md:pt-5 xl:mt-[-45px]">
+                <div className="relative w-full max-w-full mx-auto overflow-hidden bg-homeMidBG bg-center bg-no-repeat mt-[-20px] bg-full md:pt-5 xl:mt-[-45px] md:hidden">
                     <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         {slides.map((slide, index) => (
                             <div key={slide.id} className="w-full flex-shrink-0">
@@ -134,10 +170,50 @@ export default function Home() {
                         &#10095;
                     </button>
                 </div>
+                <div className='hidden md:flex md:flex-col bg-homeMidBG bg-center bg-no-repeat relative w-full max-w-full bg-full md:-mt-[17px] pt-6 xl:-mt-[2rem] justify-center items-center'>
+                  <motion.div 
+                      className="font-monts text-white"
+                      initial={{ opacity:0 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1, ease: "easeOut" }}>
+                        <h3 className="flex flex-col text-center tracking-widest md:text-2xl italic font-[700]">
+                            <motion.span
+                              initial={{ y:-50 }}
+                              whileInView={{ y: 0 }}
+                              transition={{ duration: 0.5, ease: "easeInOut" }}
+                            >SUBTHEMES</motion.span>
+                        </h3>
+                    </motion.div>
+                    <div className='flex flex-col items-center justify-center px-12 lg:px-[8rem] mt-10 xl:max-w-[100rem]'>
+                        <div className='py-5 flex text-white gap-x-10 text-xs font-monts text-justify items-center'>
+                          <motion.img 
+                            initial={{ x:-50, opacity:0 }} 
+                            whileInView={{ x:0, opacity:1 }} 
+                            transition={{ duration:.5, ease:"easeInOut"}} 
+                            src={subthemeOne} 
+                            className='lg:w-[100rem] xl:w-[150rem]'>
+                          </motion.img>
+                          <motion.p 
+                            initial={{ x:50, opacity:0 }} 
+                            whileInView={{ x:0, opacity:1 }} 
+                            transition={{ duration:.5, ease:"easeInOut"}}  
+                            className='bg-[#000000c9] rounded-md p-4 lg:text-[14px] xl:text-[16px] tracking-wider'>Power up into the parallels between understanding your vehicle&apos;s engine and mastering the engine of life itself. Learn how to ignite your passions, fuel your ambitions, and harness your inner power to propel yourself towards success. Discover the key principles that drive both engines and lives, and unlock the secrets to maximising your potential on the journey of life
+                          </motion.p>
+                        </div>
+                        <div className='py-5 flex flex-row-reverse text-white gap-x-10 text-xs font-monts text-justify items-center'>
+                          <motion.img initial={{ x:50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut"}} src={subthemeTwo} className='lg:w-[100rem] xl:w-[150rem]'></motion.img>
+                          <motion.p initial={{ x:-50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut"}} className='bg-[#000000c9] rounded-md p-4 lg:text-[14px] xl:text-[16px] tracking-wider'>The art of navigating life&apos;s inevitable traffic and roadblocks with resilience and grace. Explore strategies for managing stress, overcoming setbacks, and finding your way forward amidst life&apos;s challenges. Gain insights into building mental fortitude, adapting to changing circumstances, and maintaining momentum on your journey toward personal and professional fulfilment.</motion.p>
+                        </div>
+                        <div className='py-5 lg:-mt-[40px] flex text-white gap-x-10 text-xs font-monts text-justify items-center'>
+                          <motion.img initial={{ x:-50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut"}} src={subthemeThree} className='lg:w-[100rem] xl:w-[150rem]'></motion.img>
+                          <motion.p initial={{ x:50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut"}} className='bg-[#000000c9] rounded-md p-4 lg:text-[14px] xl:text-[16px] tracking-wider'>Explore how embracing change, learning from mistakes, and celebrating successes can propel us forward on the journey of life. Discover the transformative power of resilience, adaptability, and continuous growth as we reinvent ourselves and navigate the twists and turns of our personal and professional paths.</motion.p>
+                        </div>
+                    </div>
+                </div>
 
                 {/* About TEDx Container */}
                 <div className='bg-aboutTEDxBG bg-center bg-cover bg-no-repeat p-6 m-1 flex flex-col gap-4 items-start lg:bg-aboutTEDxBGdesktop lg:bg-right lg:px-[100px] md:px-12'>
-                    <h1 className='text-md font-[800] leading-tight md:text-5xl'>
+                    <motion.h1 initial={{ x:-50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut"}} className='text-md font-[800] leading-tight md:text-5xl'>
                         <div className='text-white'>
                             <span className='text-[#DB1212]'>T</span>ECHNOLOGY
                         </div>
@@ -147,8 +223,8 @@ export default function Home() {
                         <div className='text-white'>
                             <span className='text-[#DB1212]'>D</span>ESIGN
                         </div>
-                    </h1>
-                    <p className='text-white text-justify text-[10px] md:text-[16px] lg:w-[500px]'>
+                    </motion.h1>
+                    <motion.p initial={{ x:-50, opacity:0 }} whileInView={{ x:0, opacity:1 }} transition={{ duration:.5, ease:"easeInOut", delay:.2}} className='text-white text-justify text-[10px] md:text-[16px] lg:w-[500px]'>
                         In the spirit of discovering and spreading ideas, 
                         TED has created a program called TEDx. TEDx is a program of local, 
                         self-organized events that bring people together to share a TED-like experience. 
@@ -156,29 +232,57 @@ export default function Home() {
                         TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. 
                         The TED Conference provides general guidance for the TEDx program, but individual TEDx events, 
                         including ours, are self-organized.
-                    </p>
-                    <button className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out md:text-[12px]'>TEDx Programs
+                    </motion.p>
+                    <motion.button initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:1, delay:.5 }} className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out md:text-[12px]'>TEDx Programs
                         <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                    </button>
+                    </motion.button>
                 </div>
                 
                 {/* Secure Tickets Section */}
                 <div className='bg-homeBotBG bg-no-repeat bg-full bg-center'>
                     <div className="flex flex-col items-center mt-6 pt-10 w-screen">
                         <div className='w-screen px-7 md:px-[60px] flex justify-center'>
-                            <img src={ticketHeadline} className="w-full lg:max-w-[700px]"></img>
+                            <motion.img 
+                              initial={{ opacity:0, y:20 }} 
+                              whileInView={{ opacity:1, y:0 }} 
+                              transition={{ duration:.7, ease:"easeInOut" }} 
+                              src={ticketHeadline} 
+                              className="w-full lg:max-w-[700px]">
+                            </motion.img>
                         </div>
 
                         <div className="flex justify-center items-end mt-7 w-screen px-7 max-h-[100px] gap-x-2 md:mt-[150px] z-10 md:px-12"> 
                             <div className="flex justify-center flex-col w-full lg:w-[350px]">
-                                <img src={buyTickets} className="w-full"></img>
-                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4">CLICK HERE</button>
+                                <motion.img 
+                                  initial={{ opacity:0, y:20 }} 
+                                  whileInView={{ opacity:1, y:0 }} 
+                                  transition={{ duration:.7, ease:"easeInOut" }} 
+                                  src={buyTickets} 
+                                  className="w-full"></motion.img>
+                                <motion.button 
+                                  initial={{ opacity:0, y:20, rotateX:90 }} 
+                                  whileInView={{ opacity:1, y:0, rotateX:0 }} 
+                                  transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
+                                  className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4 hover:cursor">
+                                  <motion.span>CLICK HERE</motion.span>
+                                </motion.button>
                             </div>
                             <div className="flex justify-center flex-col w-full lg:w-[350px]">
-                                <img src={volunteerRegister} className="w-full"></img>
-                                <button className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">CLICK HERE</button>
+                                <motion.img 
+                                  initial={{ opacity:0, y:20 }} 
+                                  whileInView={{ opacity:1, y:0 }} 
+                                  transition={{ duration:.7, ease:"easeInOut" }} 
+                                  src={volunteerRegister} 
+                                  className="w-full"></motion.img>
+                                <motion.button 
+                                  initial={{ opacity:0, y:20, rotateX:90 }} 
+                                  whileInView={{ opacity:1, y:0, rotateX:0 }} 
+                                  transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
+                                  className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
+                                  <motion.span>CLICK HERE</motion.span>
+                                </motion.button>
                             </div>
                         </div>
 
@@ -187,8 +291,32 @@ export default function Home() {
                             <img src={intersectionDesktop} className='hidden w-screen md:block'></img>
                         </div> 
                         <div className='text-white font-monts text-md text-center tracking-tight flex flex-col items-center justify-center gap-y-4 pb-[100px] md:text-xl mx-7'>
-                            <p>in a world full of <span className='italic'>intersection</span>, which <span className='italic'>road</span> are you choosing?</p>
-                            <button 
+                            <p>in a world full of 
+                              <span className="relative inline-block mx-1">
+                                <span className="italic">intersection</span>
+                                <motion.div
+                                  className="absolute left-0 bottom-0 h-[2px] bg-white"
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: "100%" }}
+                                  transition={{ duration: 1, ease: "easeInOut" }}
+                                  style={{ originX: 0 }}
+                                />
+                              </span>, which 
+                              <span className="relative inline-block mx-1">
+                                <span className="italic">road</span>
+                                <motion.div
+                                  className="absolute left-0 bottom-0 h-[2px] bg-white"
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: "100%" }}
+                                  transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                                  style={{ originX: 0 }}
+                                />
+                              </span> are you choosing?
+                            </p>
+                            <motion.button 
+                                initial={{ opacity:0 }}
+                                whileInView={{ opacity:1 }}
+                                transition={{ duration:.9, ease:"easeInOut" }}
                                 onClick={handleAboutClick} 
                                 className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] tracking-wider transition duration-200 ease-in-out md:text-[12px]'>Learn more...
                                 <svg 
@@ -204,10 +332,12 @@ export default function Home() {
                                         d="M9 5l7 7-7 7">
                                     </path>
                                 </svg>
-                            </button>
+                            </motion.button>
                         </div> 
                     </div>
+                    <div className='px-7'>
                     <Footer />
+                    </div>
                 </div>
             </section>
         </>

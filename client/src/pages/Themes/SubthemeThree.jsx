@@ -23,7 +23,7 @@ export default function SubthemeThree() {
         <p className='text-white font-[200] font-monts text-justify text-xs'>
         Explore how embracing change, learning from mistakes, and celebrating successes can propel us forward on the journey of life. Discover the transformative power of resilience, adaptability, and continuous growth as we reinvent ourselves and navigate the twists and turns of our personal and professional paths.        </p>
       </div>
-      <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between items-start'>
+      <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between'>
         <div className=''>
           <button 
             onClick={handleSubthemeTwo}
