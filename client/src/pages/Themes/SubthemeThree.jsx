@@ -16,7 +16,7 @@ export default function SubthemeThree() {
     <section className='bg-greenOutlineBG bg-full bg-no-repeat bg-center overflow-hidden'>
       <div className='flex flex-col items-center justify-around pt-[85px] px-7'>
         <img src={slideDotThree} className='w-[24px] mb-1'></img>
-        <h4 className='font-monts text-white font-[400] text-[14px] tracking-widest'>1ST SUBTHEME</h4>
+        <h4 className='font-monts text-white font-[400] text-[14px] tracking-widest'>3RD SUBTHEME</h4>
         <img src={subthemeThree} className='w-full -mt-5'></img>
       </div>
       <div className='mt-10 px-7'>

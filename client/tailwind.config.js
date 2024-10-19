@@ -26,6 +26,8 @@ export default {
         intersectionFade: "url('/src/assets/PNGComponents/intersection-fade.png')",
         highwayFade: "url('/src/assets/PNGComponents/highway.png')",
         trafficFade: "url('/src/assets/PNGComponents/traffic-fade.png')",
+        pastCommittee: "url('/src/assets/PNGComponents/past-comittee.png')",
+        pastBackground: "url('/src/assets/PNGComponents/past-background.png')",
       },
     },
   },
