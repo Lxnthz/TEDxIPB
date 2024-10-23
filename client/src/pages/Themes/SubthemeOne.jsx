@@ -1,5 +1,6 @@
 import Footer from '../../components/Footer';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 {/* Slider Dot */}
 import slideDotOne from '../../assets/WebComponents/slide-dot-1.svg'
@@ -14,15 +15,17 @@ export default function SubthemeOne() {
   {/* --------------------------- */}
   return (
     <section className='bg-greenOutlineBG bg-full bg-no-repeat bg-center overflow-hidden'>
-      <div className='flex flex-col items-center justify-around pt-[85px] px-7'>
-        <img src={slideDotOne} className='w-[24px] mb-1'></img>
-        <h4 className='font-monts text-white font-[400] text-[14px] tracking-widest'>1ST SUBTHEME</h4>
-        <img src={subthemeOne} className='w-full'></img>
-      </div>
-      <div className='mt-10 px-7'>
-        <p className='text-white font-[200] font-monts text-justify text-xs'>
-        Power up into the parallels between understanding your vehicle&apos;s engine and mastering the engine of life itself. Learn how to ignite your passions, fuel your ambitions, and harness your inner power to propel yourself towards success. Discover the key principles that drive both engines and lives, and unlock the secrets to maximising your potential on the journey of life
-        </p>
+      <div className='min-h-[50vh] flex flex-col'>
+        <div className='flex flex-col items-center justify-around pt-[85px] px-7'>
+          <motion.img initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.5, ease:"easeInOut" }} src={slideDotOne} className='w-[24px] mb-1'></motion.img>
+          <motion.h4 initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.5, ease:"easeInOut" }} className='font-monts text-white font-[400] text-[14px] tracking-widest'>1ST SUBTHEME</motion.h4>
+          <motion.img initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.5, ease:"easeInOut" }} src={subthemeOne} className='w-full'></motion.img>
+        </div>
+        <div className='mt-10 px-7'>
+          <p className='text-white font-[200] font-monts text-justify text-xs'>
+          Power up into the parallels between understanding your vehicle&apos;s engine and mastering the engine of life itself. Learn how to ignite your passions, fuel your ambitions, and harness your inner power to propel yourself towards success. Discover the key principles that drive both engines and lives, and unlock the secrets to maximising your potential on the journey of life
+          </p>
+        </div>
       </div>
       <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between'>
         <div className='flex w-screen items-end'>
