@@ -22,14 +22,15 @@ export default function SubthemeOne() {
           <motion.img initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.5, ease:"easeInOut" }} src={subthemeOne} className='w-full'></motion.img>
         </div>
         <div className='mt-10 px-7'>
-          <p className='text-white font-[200] font-monts text-justify text-xs'>
+          <motion.p initial={{ opacity:0, y:-20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.5, ease:"easeInOut", delay:.5  }}  className='text-white font-[200] font-monts text-justify text-xs'>
           Power up into the parallels between understanding your vehicle&apos;s engine and mastering the engine of life itself. Learn how to ignite your passions, fuel your ambitions, and harness your inner power to propel yourself towards success. Discover the key principles that drive both engines and lives, and unlock the secrets to maximising your potential on the journey of life
-          </p>
+          </motion.p>
         </div>
       </div>
       <div className='bg-intersectionFade bg-center bg-cover bg-no-repeat px-7 mt-12 h-[340px] flex flex-col justify-between'>
         <div className='flex w-screen items-end'>
-          <button 
+          <motion.button 
+            initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:.5, ease:"easeInOut", delay:.6 }}
             onClick={handleSubthemeTwo}
             className='align-middle text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] tracking-wider transition duration-200 ease-in-out'>Subtheme 2
             <svg 
@@ -45,7 +46,7 @@ export default function SubthemeOne() {
                 d="M9 5l7 7-7 7">
               </path>
             </svg>
-          </button>
+          </motion.button>
         </div>
         <Footer />
       </div>
