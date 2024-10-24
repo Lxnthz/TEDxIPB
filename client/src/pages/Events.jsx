@@ -11,8 +11,7 @@ export default function Events() {
     {
       id: 1,
       content: (
-        <motion.div
-            className='flex flex-col'>
+        <motion.div className='flex flex-col'>
             <img src={DocOne} className='pb-2 object-contain'></img>
             <motion.h3 className='font-monts text-white font-[700] text-[11px]'>Theo Derick</motion.h3>
             <motion.p className='font-monts text-white font-[200] text-[10px]'>Breaking Barrier, Building Bridges: Collaborating to Close Generational Financial Divide</motion.p>

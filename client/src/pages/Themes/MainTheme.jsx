@@ -13,7 +13,6 @@ export default function MainTheme() {
             <div className="font-monts text-white mx-2">
               <h3 className="flex flex-col text-center tracking-widest font-[400] md:text-2xl">2024 TEDXIPB MAIN THEME</h3>
             </div>
-
             <div className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
                 <Headliner />
             </div>
@@ -37,6 +36,7 @@ export default function MainTheme() {
                 J Robert Oppenheimer refers the terms “entropy” while discussing atomic bomb, as an atomic bomb works by splitting atoms (fission) in a chain reaction, releasing enormous amounts of energy. This process creates a highly chaotic and disorganized state with a significant increase in entropy. Interestingly, Canadian singer-songwriter Daniel Caesar quoted the famous line above as the intro of the opening track of his 2019 album, also titled “ENTROPY”.        
               </p>
             </div>    
+
           </div>
         </div>
 
