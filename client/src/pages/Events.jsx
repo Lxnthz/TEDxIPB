@@ -54,8 +54,8 @@ export default function Events() {
   ]
 
   return (
-    <section className="bg-pastBackground bg-cover bg-no-repeat bg-center w-screen pt-[85px] md:pt-[10rem]">
-      <section className='bg-pastCommittee bg-contain bg-no-repeat bg-bottom md:min-h-screen'>
+    <section className="bg-pastBackground bg-cover bg-no-repeat bg-center w-[100%] pt-[85px] md:pt-[10rem] overflow-x-hidden">
+      <section className='bg-pastCommittee bg-contain bg-no-repeat bg-bottom md:min-h-screen overflow-hidden'>
         <motion.div className='md:flex justify-center xl:gap-x-12 xl:px-[10rem]'>
           {/* First Section */}
           <motion.div className="flex flex-col items-center justify-between md:pl-10">
