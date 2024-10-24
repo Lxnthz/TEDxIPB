@@ -281,7 +281,7 @@ export default function Home() {
                                   whileInView={{ opacity:1, y:0, rotateX:0 }} 
                                   transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
                                   className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
-                                  <motion.span><a href='#'>CLICK HERE</a></motion.span>
+                                  <motion.span><a href='https://api.whatsapp.com/send/?phone=6281215142257'>CLICK HERE</a></motion.span>
                                 </motion.button>
                             </div>
                         </div>
