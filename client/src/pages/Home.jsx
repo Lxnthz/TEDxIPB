@@ -233,11 +233,11 @@ export default function Home() {
                         The TED Conference provides general guidance for the TEDx program, but individual TEDx events, 
                         including ours, are self-organized.
                     </motion.p>
-                    <motion.button initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:1, delay:.5 }} className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out md:text-[12px]'>TEDx Programs
+                    <a href='https://www.ted.com/about/programs-initiatives'><motion.button href="https://www.ted.com/about/programs-initiatives" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:1, delay:.5 }} className='text-white text-[7px] font-monts bg-[#007D58] p-2 font-[800] rounded-md flex items-center hover:border hover:bg-[#4abb99] transition duration-200 ease-in-out md:text-[12px]'>TEDx Programs
                         <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                    </motion.button>
+                    </motion.button></a>
                 </div>
                 
                 {/* Secure Tickets Section */}
@@ -266,7 +266,7 @@ export default function Home() {
                                   whileInView={{ opacity:1, y:0, rotateX:0 }} 
                                   transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
                                   className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4 hover:cursor">
-                                  <motion.span>CLICK HERE</motion.span>
+                                  <motion.span><a href='https://www.loket.com/o/tedxipb'>CLICK HERE</a></motion.span>
                                 </motion.button>
                             </div>
                             <div className="flex justify-center flex-col w-full lg:w-[350px]">
@@ -281,7 +281,7 @@ export default function Home() {
                                   whileInView={{ opacity:1, y:0, rotateX:0 }} 
                                   transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
                                   className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
-                                  <motion.span>CLICK HERE</motion.span>
+                                  <motion.span><a href='#'>CLICK HERE</a></motion.span>
                                 </motion.button>
                             </div>
                         </div>
