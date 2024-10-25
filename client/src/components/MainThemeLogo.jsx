@@ -6,7 +6,7 @@ export default function MainThemeSVG() {
     <div>
     <motion.svg 
       width="800" 
-      height="auto" 
+      height="232" 
       viewBox="0 0 297 86" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg" 
