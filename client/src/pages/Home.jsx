@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { color, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 {/* Themes */}
 import subthemeOne from '../assets/WebComponents/power-up-theme.svg'
@@ -103,6 +103,8 @@ export default function Home() {
     const prevSlide = () => { setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1)); };
     {/* --------------------------- */}
 
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     return (
         <>
             <section className="bg-black flex flex-col overflow-hidden">
@@ -133,14 +135,18 @@ export default function Home() {
                           initial={{ opacity:0, y:50 }}
                           whileInView={{ opacity:1, y:0 }}
                           transition={{ duration:1, ease:"easeInOut" }}>u(r) turn</motion.h3>
-                        <motion.img 
+                        <> {isSafari ? (
+                          <motion.img 
                           src={Headliner} 
-                          className='w-[290px] md:w-[500px] xl:w-[800px] hidden' 
+                          className='w-[290px] md:w-[500px] xl:w-[800px]' 
                           alt="Headliner"
                           initial={{ y:100, opacity:0 }}
                           whileInView={{ y:0, opacity:1 }}
-                          transition={{ duration: 0.8, ease: "easeInOut" }} />
-                        <MovingLogo />
+                          transition={{ duration: 0.8, ease: "easeInOut" }} />  
+                        ) : (
+                          <MovingLogo />
+                        )}
+                        </>
                     </div>
                 </div>
                 <div className="flex justify-center mt-[-50px] z-10">

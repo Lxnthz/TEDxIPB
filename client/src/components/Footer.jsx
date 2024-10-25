@@ -16,16 +16,16 @@ export default function Footer() {
         </p>
       </div>
       <div className='flex space-x-4'>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/company/tedxipb" target="_blank" rel="noopener noreferrer">
           <img src={LinkedIn} className='w-[15px] md:w-[20px]' alt="LinkedIn" />
         </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/tedxipb" target="_blank" rel="noopener noreferrer">
           <img src={Instagram} className='w-[15px] md:w-[20px]' alt="Instagram" />
         </a>
-        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@tedxipb" target="_blank" rel="noopener noreferrer">
           <img src={Tiktok} className='w-[15px] md:w-[20px]' alt="Tiktok" />
         </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://x.com/tedxipb" target="_blank" rel="noopener noreferrer">
           <img src={Twitter} className='w-[15px] md:w-[20px]' alt="Twitter" />
         </a>
       </div>

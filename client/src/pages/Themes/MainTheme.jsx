@@ -1,9 +1,13 @@
 import Headliner from '../../components/MainThemeLogo';
+import embracing from '../../assets/WebComponents/embracing-entropy.svg';
 import Quote from '../../assets/WebComponents/oppenheimer-and-daniel.svg'
 import Footer from '../../components/Footer';
 import { motion } from 'framer-motion';
 
 export default function MainTheme() {
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
   return (
     <section>
       <section className='bg-greenOutlineBG bg-full bg-no-repeat bg-center min-h-screen h-full lg:hidden'>
@@ -14,7 +18,18 @@ export default function MainTheme() {
               <h3 className="flex flex-col text-center tracking-widest font-[400] md:text-2xl">2024 TEDXIPB MAIN THEME</h3>
             </div>
             <div className='flex flex-col justify-center items-center mt-3 gap-4 p-5 '>
-                <Headliner />
+            <> {isSafari ? (
+                          <motion.img 
+                          src={embracing} 
+                          className='w-[290px] md:w-[500px] xl:w-[800px]' 
+                          alt="Headliner"
+                          initial={{ y:100, opacity:0 }}
+                          whileInView={{ y:0, opacity:1 }}
+                          transition={{ duration: 0.8, ease: "easeInOut" }} />  
+                        ) : (
+                          <Headliner />
+                        )}
+                        </>
             </div>
           </div>
         </div>
