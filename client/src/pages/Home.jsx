@@ -24,6 +24,7 @@ import intersectionDesktop from '../assets/WebComponents/intersection-fade-deskt
 import buyTickets from '../assets/WebComponents/buy-tickets.svg'
 import volunteerRegister from '../assets/WebComponents/volunteer-register.svg'
 import policeLineLong from '../assets/WebComponents/police-line-long.svg'
+import buyMerch from '../assets/WebComponents/merch-buy.svg'
 
 export default function Home() {
     {/* Page Navigator */}
@@ -259,40 +260,57 @@ export default function Home() {
                             </motion.img>
                         </div>
 
-                        <div className="flex justify-center items-end mt-7 w-screen px-7 max-h-[100px] gap-x-2 md:mt-[150px] z-10 md:px-12"> 
-                            <div className="flex justify-center flex-col w-full lg:w-[350px]">
-                                <motion.img 
-                                  initial={{ opacity:0, y:20 }} 
-                                  whileInView={{ opacity:1, y:0 }} 
-                                  transition={{ duration:.7, ease:"easeInOut" }} 
-                                  src={buyTickets} 
-                                  className="w-full"></motion.img>
-                                <motion.button 
-                                  initial={{ opacity:0, y:20, rotateX:90 }} 
-                                  whileInView={{ opacity:1, y:0, rotateX:0 }} 
-                                  transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
-                                  className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4 hover:cursor">
-                                  <motion.span><a href='https://www.loket.com/o/tedxipb'>CLICK HERE</a></motion.span>
-                                </motion.button>
+                        <div className="flex flex-col items-center z-10"> 
+                            <div className='flex justify-center items-end w-screen px-7 max-h-[100px] gap-x-2 md:mt-[150px] z-10 md:px-12'>
+                              <div className="flex justify-center flex-col w-full lg:w-[350px]">
+                                  <motion.img 
+                                    initial={{ opacity:0, y:20 }} 
+                                    whileInView={{ opacity:1, y:0 }} 
+                                    transition={{ duration:.7, ease:"easeInOut" }} 
+                                    src={buyTickets} 
+                                    className="w-full"></motion.img>
+                                  <motion.button 
+                                    initial={{ opacity:0, y:20, rotateX:90 }} 
+                                    whileInView={{ opacity:1, y:0, rotateX:0 }} 
+                                    transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
+                                    className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 md:text-[16px] md:p-4 hover:cursor">
+                                    <motion.span><a href='https://www.loket.com/event/main-event-tedxipb-2024'>CLICK HERE</a></motion.span>
+                                  </motion.button>
+                              </div>
+                              <div className="flex justify-center flex-col w-full lg:w-[350px]">
+                                  <motion.img 
+                                    initial={{ opacity:0, y:20 }} 
+                                    whileInView={{ opacity:1, y:0 }} 
+                                    transition={{ duration:.7, ease:"easeInOut" }} 
+                                    src={volunteerRegister} 
+                                    className="w-full"></motion.img>
+                                  <motion.button 
+                                    initial={{ opacity:0, y:20, rotateX:90 }} 
+                                    whileInView={{ opacity:1, y:0, rotateX:0 }} 
+                                    transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
+                                    className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
+                                    <motion.span><a href='https://api.whatsapp.com/send/?phone=6281215142257'>CLICK HERE</a></motion.span>
+                                  </motion.button>
+                              </div>
                             </div>
-                            <div className="flex justify-center flex-col w-full lg:w-[350px]">
-                                <motion.img 
-                                  initial={{ opacity:0, y:20 }} 
-                                  whileInView={{ opacity:1, y:0 }} 
-                                  transition={{ duration:.7, ease:"easeInOut" }} 
-                                  src={volunteerRegister} 
-                                  className="w-full"></motion.img>
-                                <motion.button 
-                                  initial={{ opacity:0, y:20, rotateX:90 }} 
-                                  whileInView={{ opacity:1, y:0, rotateX:0 }} 
-                                  transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
-                                  className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
-                                  <motion.span><a href='https://api.whatsapp.com/send/?phone=6281215142257'>CLICK HERE</a></motion.span>
-                                </motion.button>
+                            <div className="flex mt-2 max-w-[calc(100%*0.45)] justify-center flex-col w-full lg:w-[350px]">
+                                  <motion.img 
+                                    initial={{ opacity:0, y:20 }} 
+                                    whileInView={{ opacity:1, y:0 }} 
+                                    transition={{ duration:.8, ease:"easeInOut" }} 
+                                    src={buyMerch} 
+                                    className="w-full"></motion.img>
+                                  <motion.button 
+                                    initial={{ opacity:0, y:20, rotateX:90 }} 
+                                    whileInView={{ opacity:1, y:0, rotateX:0 }} 
+                                    transition={{ duration:.7, ease:"easeInOut", delay:.3 }} 
+                                    className="bg-[#E4C312] h-[19px] flex items-center justify-center font-monts tracking-[.4em] text-[9px] font-[800] px-1 object-center md:text-[16px] md:p-4">
+                                    <motion.span><a href='https://ipb.link/preorder-tedxipb-merchandise'>CLICK HERE</a></motion.span>
+                                  </motion.button>
                             </div>
                         </div>
 
-                        <div className="-mt-[100px] -mb-[110px] lg:-my-[200px] xl:-my-[350px] -z-4">
+                        <div className="-mt-[150px] -mb-[110px] lg:-my-[200px] xl:-my-[500px] -z-4">
                             <img src={intersection} className='w-screen md:hidden'></img>
                             <img src={intersectionDesktop} className='hidden w-screen md:block'></img>
                         </div> 
